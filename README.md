@@ -1,64 +1,80 @@
-# Student Management System (Professional C# WPF Edition)
 
-A modern, advanced desktop Student Management System built with **C#**, **WPF**, **Material Design**, and **Entity Framework Core + MySQL**.
+EduCore – Student Management System
+A modern desktop Student Management System built with C#, WPF, and MySQL.
 
-## Features
-- Secure login with role-based access (Admin, Registrar, Teacher)
-- Dashboard with key statistics
-- Full Student CRUD with search
-- Course, Enrollment, Grades, and Attendance modules (structure ready for expansion)
-- Professional Material Design UI
-- Password hashing with BCrypt
-- Automatic database creation and admin seed
+Features a clean glass-style UI, role-based authentication, and core student management functionality.
 
-## Default Login
-- **Username:** `admin`
-- **Password:** `admin123`
+Features
+Secure login with role-based access (Admin, Registrar, Teacher)
 
-## Requirements
-- Visual Studio 2022 (or later) with .NET 7 Desktop development workload
-- MySQL Server (local or remote)
-- .NET 7 SDK
+Dashboard with key statistics
 
-## Setup Instructions
+Student management (CRUD + search)
 
-1. **Install MySQL** and create a database (or let the app create it):
-   ```sql
-   CREATE DATABASE StudentManagement;
-   ```
+Course management
 
-2. **Update connection string** in `Data/AppDbContext.cs`:
-   ```csharp
-   var connectionString = "Server=localhost;Database=StudentManagement;User=root;Password=YOUR_PASSWORD;";
-   ```
+Structured modules for Enrollments, Grades, and Attendance
 
-3. Open the solution/project in Visual Studio.
+Modern glassmorphism-inspired UI
 
-4. Restore NuGet packages (they will download automatically):
-   - MaterialDesignThemes
-   - Pomelo.EntityFrameworkCore.MySql
-   - BCrypt.Net-Next
-   - etc.
+Entity Framework Core + MySQL
 
-5. Build and run (`F5`).
+Password hashing with BCrypt
 
-6. Login with the default admin account.
+Screenshots
+(Add screenshots of the login, dashboard, and students page here after running the app)
 
-## Project Structure
-- `Models/` — Entity classes
-- `Data/` — EF Core DbContext
-- `Views/` — Windows and pages
-- `Views/Dialogs/` — Add/Edit dialogs
-- Modern MVVM-ready architecture
+Default Login
+Username
 
-## Next Enhancements (Recommended)
-- Complete Course / Enrollment / Grade / Attendance dialogs (follow StudentDialog pattern)
-- Photo upload for students
-- PDF report generation (use QuestPDF or iText)
-- Charts on dashboard (LiveCharts is already referenced)
-- Audit logging
-- Export to Excel
+Password
 
-This is a solid, professional portfolio project that demonstrates full-stack desktop development skills. Expand the remaining modules using the same patterns already implemented for Students.
+admin
 
-Built for Sibusiso Tshabalala — Junior Software Developer.
+admin123
+
+Tech Stack
+Language: C#
+
+UI: WPF
+
+Database: MySQL
+
+ORM: Entity Framework Core (Pomelo)
+
+Authentication: BCrypt
+
+Requirements
+Visual Studio 2022
+
+.NET 7 SDK
+
+MySQL Server
+
+Setup
+Clone the repository:
+
+git clone https://github.com/YOUR_USERNAME/StudentManagementSystem.git
+Open StudentManagementSystem.csproj in Visual Studio.
+
+Update the connection string in Data/AppDbContext.cs:
+
+var connectionString = "Server=localhost;Database=StudentManagement;User=root;Password=YOUR_PASSWORD;";
+Restore NuGet packages and build the solution.
+
+Run the application.
+
+Project Structure
+StudentManagementSystem/
+├── Data/           # DbContext
+├── Models/         # Entity classes
+├── Views/          # Windows and pages
+│   ├── Dialogs/    # Add/Edit dialogs
+│   └── Pages/      # Main pages
+└── App.xaml        # Application resources
+Author
+Sibusiso Tshabalala
+Junior Software Developer
+LinkedIn • GitHub
+
+Built as a portfolio project to demonstrate full-stack desktop development skills.
