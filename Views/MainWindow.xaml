@@ -1,0 +1,83 @@
+<Window x:Class="StudentManagementSystem.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Student Management System" Height="780" Width="1360"
+        WindowStartupLocation="CenterScreen"
+        Background="#F1F5F9">
+	<Window.Resources>
+		<Style x:Key="SidebarButton" TargetType="Button">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Foreground" Value="#E2E8F0"/>
+			<Setter Property="FontSize" Value="14.5"/>
+			<Setter Property="Padding" Value="16,12"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="BorderThickness" Value="0"/>
+			<Setter Property="Margin" Value="10,3"/>
+			<Setter Property="Cursor" Value="Hand"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="10" Padding="{TemplateBinding Padding}">
+							<ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter TargetName="border" Property="Background" Value="#30FFFFFF"/>
+								<Setter Property="Foreground" Value="White"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="270"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<!-- Glass Sidebar -->
+		<Border Grid.Column="0" CornerRadius="0" BorderBrush="#40FFFFFF" BorderThickness="0,0,1,0">
+			<Border.Background>
+				<SolidColorBrush Color="#0F172A" Opacity="0.88"/>
+			</Border.Background>
+			<Border.Effect>
+				<DropShadowEffect BlurRadius="30" ShadowDepth="2" Opacity="0.12" Color="#000000" Direction="0"/>
+			</Border.Effect>
+
+			<DockPanel>
+				<!-- Logo -->
+				<StackPanel DockPanel.Dock="Top" Margin="22,28,22,32" HorizontalAlignment="Center">
+					<Border Width="64" Height="64" CornerRadius="16" Background="#0D9488" HorizontalAlignment="Center">
+						<TextBlock Text="S" FontSize="32" FontWeight="Bold" Foreground="White"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					</Border>
+					<TextBlock Text="EduCore" FontSize="20" FontWeight="Bold" Foreground="White"
+                               HorizontalAlignment="Center" Margin="0,12,0,0"/>
+					<TextBlock x:Name="UserInfoText" Foreground="#94A3B8" FontSize="12"
+                               HorizontalAlignment="Center" Margin="0,6,0,0" TextAlignment="Center"/>
+				</StackPanel>
+
+				<!-- Navigation -->
+				<StackPanel DockPanel.Dock="Top">
+					<Button Style="{StaticResource SidebarButton}" Click="Nav_Dashboard" Content="Dashboard"/>
+					<Button Style="{StaticResource SidebarButton}" Click="Nav_Students" Content="Students"/>
+					<Button Style="{StaticResource SidebarButton}" Click="Nav_Courses" Content="Courses"/>
+					<Button Style="{StaticResource SidebarButton}" Click="Nav_Enrollments" Content="Enrollments"/>
+					<Button Style="{StaticResource SidebarButton}" Click="Nav_Grades" Content="Grades"/>
+					<Button Style="{StaticResource SidebarButton}" Click="Nav_Attendance" Content="Attendance"/>
+					<Button x:Name="UsersButton" Style="{StaticResource SidebarButton}" Click="Nav_Users" Content="Users"/>
+				</StackPanel>
+
+				<!-- Logout -->
+				<Button DockPanel.Dock="Bottom" Style="{StaticResource SidebarButton}"
+                        Click="Logout_Click" Content="Logout" Margin="10,0,10,20"/>
+			</DockPanel>
+		</Border>
+
+		<!-- Main Content -->
+		<Frame x:Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden" Background="#F1F5F9"/>
+	</Grid>
+</Window>

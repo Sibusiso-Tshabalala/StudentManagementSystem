@@ -1,0 +1,9 @@
+<Page x:Class="StudentManagementSystem.Views.Pages.AttendancePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Attendance">
+    <StackPanel Margin="30">
+        <TextBlock Text="Attendance Tracking" FontSize="26" FontWeight="Bold" Margin="0,0,0,20"/>
+        <TextBlock Text="Daily attendance, reports, percentage calculations." Opacity="0.7"/>
+    </StackPanel>
+</Page>
